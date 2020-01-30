@@ -103,5 +103,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-#Visual Studio Configuration
+# Visual Studio Configuration
 .vscode
+
+# Ignore macOS binary files
+.DS_Store
