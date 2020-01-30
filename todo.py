@@ -1,7 +1,7 @@
 # Listado de imports
 from todo_data import todo_data
 import os
-from functions import(
+from functions import (
     exit_text,
     ayuda_text,
     comando_no_existe,
