@@ -1,3 +1,6 @@
+import os
+
+
 def exit_text():
     """ Impresiones de salida """
     print("")
@@ -22,6 +25,11 @@ def comando_no_existe(comando):
     print("No existe el comando: " + comando)
     ayuda_text()
 
+
 def longitud_minima_comando_correcta(comando):
     # Para minimizar codigo, un if logico en una linea
     return True if len(comando.split(' ', 1)) > 1 else False
+
+
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')

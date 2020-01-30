@@ -1,11 +1,13 @@
 # Listado de imports
 from todo_data import todo_data
 import os
+from subprocess import Popen
 from functions import (
     exit_text,
     ayuda_text,
     comando_no_existe,
     longitud_minima_comando_correcta,
+    clear_console
 )
 from constantes import (
     AYUDA_LISTADO,
@@ -14,10 +16,7 @@ from constantes import (
     SALIR_LISTADO
 )
 
-# Evitamos el error de devolucion de valor, que da alguna vez
-# en python con '_' indicamos las variables que no se deberian
-# de modificar
-_ = os.system("clear")
+clear_console()
 
 todo = todo_data()
 todo.print_data()
@@ -45,7 +44,7 @@ while cont:
         # FIX si solo se agrega la palabra comando y nada mas el programa rompe
         if longitud_minima_comando_correcta(comando_usuario):
             todo.agregar_tarea(comando_usuario.split(' ', 1)[1])
-            _ = os.system("clear")
+            clear_console()
             todo.print_data()
         else:
             print("Comando agregar mal escrito")
@@ -66,7 +65,7 @@ while cont:
             if isinstance(indice, int):
                 todo.completar_tarea(indice - 1)
 
-                _ = os.system("clear")
+                clear_console()
                 todo.print_data()
                 print("Tarea completada")
 

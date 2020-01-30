@@ -19,8 +19,8 @@ class todo_data:
         self.data = ET.parse(DATA_FILENAME)
 
     def save_demo_xml_file(self, data):
-        """ 
-        Guardar una estructura en un archivo 
+        """
+        Guardar una estructura en un archivo
         Abrimos el archivo en binario porque es como funciona el modulo
         """
         mydata = ET.tostring(data)
@@ -76,7 +76,7 @@ class todo_data:
     def completar_tarea(self, indice_tarea):
         """
         Accede al objeto root y modifica el atributo
-        done de un elemento, poniendolo en True 
+        done de un elemento, poniendolo en True
         """
         root = self.data.getroot()
         for index, elem in enumerate(root.iter('item')):
