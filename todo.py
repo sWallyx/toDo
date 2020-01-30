@@ -1,6 +1,5 @@
 # Listado de imports
 from todo_data import todo_data
-from subprocess import Popen
 from functions import (
     exit_text,
     ayuda_text,
