@@ -1,7 +1,17 @@
 # Lista de imports modulos y variables
 import xml.etree.ElementTree as ET
+from defusedxml.ElementTree import parse
 from pathlib import Path
 from constantes import DATA_FILENAME
+
+
+"""
+Notes:
+    Using xml.etree.ElementTree to parse untrusted XML data is known to be
+    vulnerable to XML attacks. Replace xml.etree.ElementTree with the
+    equivalent defusedxml package, or make sure defusedxml.defuse_stdlib()
+    is called.
+"""
 
 
 class todo_data:
@@ -16,7 +26,7 @@ class todo_data:
 
     def read_xml_file(self):
         """ Leemos el archivo con el modulo ElementTree """
-        self.data = ET.parse(DATA_FILENAME)
+        self.data = parse(DATA_FILENAME)
 
     def save_demo_xml_file(self, data):
         """
